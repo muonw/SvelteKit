@@ -3,7 +3,7 @@ A project template based on SvelteKit. If you are looking for SvelteKit, please 
 ```sh
 PROJECT_NAME=myproject
 wget -O "${PROJECT_NAME}.zip" https://github.com/muonw/sveltekit/archive/refs/heads/main.zip
-unzip "${PROJECT_NAME}.zip" && rm "${PROJECT_NAME}.zip"
+unzip "${PROJECT_NAME}.zip" -d "${PROJECT_NAME}" && rm "${PROJECT_NAME}.zip"
 ```
 
 Base: Skeleton project + Typescript + ESLint + Prettier
