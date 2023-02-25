@@ -1,38 +1,40 @@
-# create-svelte
+A project template based on SvelteKit. If you are looking for SvelteKit, please visit [github.com/sveltejs/kit](https://github.com/sveltejs/kit) or [kit.svelte.dev](https://kit.svelte.dev/)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```sh
+PROJECT_NAME=myproject
+wget -O "${PROJECT_NAME}.zip" https://github.com/muonw/sveltekit/archive/refs/heads/main.zip
+unzip "${PROJECT_NAME}.zip" && rm "${PROJECT_NAME}.zip"
 ```
 
-## Developing
+Base: Skeleton project + Typescript + ESLint + Prettier
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
-npm run dev
+### Summary of the modifications:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- src/lib/index.js added
 
-## Building
+- src/routes/+layout.ts
+    - prerender: true
+    - ssr: false
 
-To create a production version of your app:
+- static
+    - .nojekyll added
+    - favicon.png cleaned
 
-```bash
-npm run build
-```
+- package.json
+    - skeleton & library combined
+    - dependencies
+        - @sveltejs/adapter-auto --> @sveltejs/adapter-static
+        - @sveltejs/package added
+        - sass added
+        - svelte-preprocess added
+        - versions updated
 
-You can preview the production build with `npm run preview`.
+- svelte.config.js
+    - adapter: auto --> static
+    - preprocessor: @sveltejs/kit/vite --> svelte-preprocess
+    - adapter pages & assets: docs
+    - scss includePaths: node_modules
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- tsconfig.json
+    - sourceMap --> false
