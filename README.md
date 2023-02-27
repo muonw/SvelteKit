@@ -34,8 +34,15 @@ Base: Skeleton project + Typescript + ESLint + Prettier
     - .nojekyll added
     - favicon.png cleaned
 
+- .gitignore
+    - /_ added
+
+- .npmrc
+    - @muonw registry added
+
 - package.json
     - skeleton & library combined
+    - license updated
     - dependencies
         - @sveltejs/adapter-auto --> @sveltejs/adapter-static
         - @sveltejs/package added
