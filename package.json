@@ -7,7 +7,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"package": "svelte-kit sync && svelte-package",
-		"prepublishOnly": "echo 'Please use `publishLocal` or `publishPublic`' && exit 1",
+		"prepublishOnly": "if [ -z $MU_NPM_PERMIT ]; then echo 'Please use `publishLocal` or `publishPublic`' && exit 1; fi",
 		"publishLocal": "_/NPM_REGISTRY_LOCAL",
 		"publishPublic": "_/NPM_REGISTRY_PUBLIC",
 		"preview": "vite preview",
@@ -23,9 +23,6 @@
 			"svelte": "./dist/index.js"
 		}
 	},
-	"files": [
-		"dist"
-	],
 	"peerDependencies": {
 		"svelte": "^3.55.1"
 	},
