@@ -7,7 +7,9 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"package": "svelte-kit sync && svelte-package",
-		"prepublishOnly": "npm run package",
+		"prepublishOnly": "echo 'Please use `publishLocal` or `publishPublic`' && exit 1",
+		"publishLocal": "_/NPM_REGISTRY_LOCAL",
+		"publishPublic": "_/NPM_REGISTRY_PUBLIC",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -41,7 +43,6 @@
 		"sass": "^1.58.3",
 		"svelte": "^3.55.1",
 		"svelte-check": "^3.0.4",
-		"svelte-preprocess": "^5.0.1",
 		"tslib": "^2.5.0",
 		"typescript": "^4.9.5",
 		"vite": "^4.1.4"
